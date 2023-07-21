@@ -20,13 +20,7 @@ public class Main {
         Thread palindromeThread = new Thread(() -> {
             for (String text : texts) {
                 if (isPalindrome(text)) {
-                    int length = text.length();
-                    if (length == 3)
-                        counter3.incrementAndGet();
-                    else if (length == 4)
-                        counter4.incrementAndGet();
-                    else if (length == 5)
-                        counter5.incrementAndGet();
+                    counter(text);
                 }
             }
         });
@@ -34,13 +28,7 @@ public class Main {
         Thread sameLetterThread = new Thread(() -> {
             for (String text : texts) {
                 if (isSameLetter(text)) {
-                    int length = text.length();
-                    if (length == 3)
-                        counter3.incrementAndGet();
-                    else if (length == 4)
-                        counter4.incrementAndGet();
-                    else if (length == 5)
-                        counter5.incrementAndGet();
+                    counter(text);
                 }
             }
         });
@@ -48,13 +36,7 @@ public class Main {
         Thread increasingOrderThread = new Thread(() -> {
             for (String text : texts) {
                 if (isIncreasingOrder(text)) {
-                    int length = text.length();
-                    if (length == 3)
-                        counter3.incrementAndGet();
-                    else if (length == 4)
-                        counter4.incrementAndGet();
-                    else if (length == 5)
-                        counter5.incrementAndGet();
+                    counter(text);
                 }
             }
         });
@@ -108,5 +90,14 @@ public class Main {
             }
         }
         return true;
+    }
+    public static void counter (String text) {
+        int length = text.length();
+        if (length == 3)
+            counter3.incrementAndGet();
+        else if (length == 4)
+            counter4.incrementAndGet();
+        else if (length == 5)
+            counter5.incrementAndGet();
     }
 }
